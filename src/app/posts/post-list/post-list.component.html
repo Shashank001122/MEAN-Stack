@@ -1,0 +1,77 @@
+<div class="row" style="margin-top: 30px; margin-bottom:30px;">
+  <div class="col-12 col-md-4">
+      <mat-card class="skill-block" style="color:#bbbbbb;
+      background-color: #202020;">
+          <mat-card-header>
+            <i mat-card-avatar class="fa fa-mobile-alt accent-color fa-2x"></i>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>About</mat-card-title>
+          </mat-card-header>
+          
+          <mat-card-content>
+            <p>
+                This blog is a personal project. It's developed on Angular and Node.js and is connected to MongoDb atlas.</p>
+          </mat-card-content>
+      </mat-card>
+  </div>
+
+  <div class="col-12 col-md-4">
+      <mat-card style="color:#bbbbbb;
+      background-color: #202020;">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <i mat-card-avatar class="fa fa-desktop accent-color fa-2x"></i>
+            <mat-card-title>Responsive</mat-card-title>
+            
+          </mat-card-header>
+       
+          <mat-card-content>
+            <p>
+              The website is responsive. It can be accessed easily on Desktops and Mobile devices. Please use on Chrome for better user experience
+            </p>
+          </mat-card-content>
+      </mat-card>
+  </div>
+
+  <div class="col-12 col-md-4">
+      <mat-card style="color:#bbbbbb;
+      background-color: #202020;">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <i mat-card-avatar class="fa fa-desktop accent-color fa-2x"></i>
+            <mat-card-title>Welcome!</mat-card-title>
+            
+          </mat-card-header>
+       
+          <mat-card-content>
+            <p>Users are welcome to sign up and create an account! Once you login, you can start posting. Your posts will feature below.
+            </p>
+          </mat-card-content>
+      </mat-card>
+  </div>
+</div>
+
+
+
+<mat-spinner *ngIf="isLoading"></mat-spinner>
+<mat-accordion multi="true" *ngIf="posts.length > 0 && !isLoading">
+  <mat-expansion-panel *ngFor="let post of posts">
+    <mat-expansion-panel-header>
+      <h4 style="color:#009988">{{ post.title }}</h4>
+    </mat-expansion-panel-header>
+    <div class="post-image" >
+      <img [src]="post.imagePath" [alt]="post.title" align="center">
+    </div><br><br>
+    <p>{{ post.content }}</p>
+    <mat-action-row *ngIf="userIsAuthenticated && userId === post.creator">
+      <a mat-button color="primary" [routerLink]="['/edit', post.id]">EDIT</a>
+      <button mat-button color="warn" (click)="onDelete(post.id)">DELETE</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+</mat-accordion>
+<br>
+<br>
+<mat-paginator [length]="totalPosts" [pageSize]="postsPerPage" [pageSizeOptions]="pageSizeOptions" (page)="onChangedPage($event)"
+  *ngIf="posts.length > 0"></mat-paginator>
+<p class="info-text mat-body-1" *ngIf="posts.length <= 0 && !isLoading">No posts added yet!</p>
+

@@ -1,0 +1,47 @@
+<div class="row">
+    <mat-card class="col-12" style="color:#bbbbbb;
+    background-color: #202020;">
+        <h4>Contact Information</h4>
+    </mat-card>
+</div>
+
+<mat-list class="my-3">
+    <div class="row mb-5">
+        <div class="col-12 cold-md-4">
+            <address>
+                <p><strong>Shashank Baghel</strong></p>
+                <p>947 W 30th Street, Apartment 6</p>
+                <p>Los Angeles, California 90007</p>
+            </address>
+
+            <address>
+                    <p><strong>Email</strong></p>
+                    <a href="mailto:baghel@usc.edu">baghel@usc.edu</a>
+            </address>
+        </div>
+
+        <div class="col-12 cold-md-8">
+                <div class="row">
+                        <mat-card class="col-12" style="color:#bbbbbb;
+    background-color: #202020;">
+                            <h4>Contact Form</h4>
+                        </mat-card>
+                    </div>
+                
+            <form ngNoForm action="https://formspree.io/baghel@usc.edu" method="POST">
+                <mat-form-field class="full-width">
+                    <input matInput type="email" placeholder="Your Email" name="_replyto" required>
+                </mat-form-field>
+
+                <mat-form-field class="full-width">
+                    <input matInput placeholder="Subject" required>
+                </mat-form-field>
+
+                <mat-form-field class="full-width">
+                    <textarea matInput placeholder="Message" required></textarea>
+                </mat-form-field>
+                <button mat-stroked-button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+</mat-list>

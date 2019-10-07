@@ -1,0 +1,57 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<div class="site">
+  <div class="site-content">
+    
+    <div class="container">
+      
+      <nav class="navbar navbar-expand navbar-dark">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link" routerLink="/" routerLinkActive="active"><i class="d-none d-sm-inline-block fas fa-home mx-1"></i>Home</a>
+            <a class="nav-item nav-link"  [routerLink]="['/portfolio']" routerLinkActive="active"><i class="d-none d-sm-inline-block  fas fa-info mx-1"></i>PortFolio</a>
+            <a class="nav-item nav-link"  [routerLink]="['/contact']" routerLinkActive="active"><i class="d-none d-sm-inline-block  fas fa-id-card mx-1"></i>ContactMe</a>      
+        </div>
+        <app-header></app-header>  
+      </nav>
+    
+    
+    <!--header, not mat toolbar wala header but original header-->
+
+    <div class="header">
+      <div class="container">
+      </div>
+    </div>
+
+    </div>  
+    
+  
+  
+  <main class="main-content container">
+      
+      <router-outlet></router-outlet>
+<!--  
+  <app-posts-create  (postCreated)="onAddPost($event)"></app-posts-create>
+  <app-post-list></app-post-list>
+ 
+<app-posts-create (postCreated)="onAddPost($event)"></app-posts-create>
+<app-post-list [posts]="storedPosts"></app-post-list>
+--> 
+
+    </main>
+  </div>
+
+  <footer class="footer container">
+    <div class="row">
+      <div class="col-12 col-sm-6">
+        <span style="font-size: 16px">Copyright &copy;2019 Shashank Baghel. All rights reserved</span>
+      </div>
+      <div class="col-12 col-sm-6"> 
+        <ul class="social-icons float-right mt-3">
+          <li style="display:inline-block; list-style:none"><a href="https://www.facebook.com/baghel.shashank"><i class="fab fa-facebook"></i></a></li>&nbsp;
+          <li style="display:inline-block;list-style:none"><a href="https://www.linkedin.com/in/shashankbaghel/"><i class="fab fa-linkedin-in"></i></a></li>&nbsp;
+          <li style="display:inline-block;list-style:none"><a href="https://github.com/Shashank001122/"><i class="fab fa-github-square"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  
