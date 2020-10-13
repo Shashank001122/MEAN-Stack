@@ -1,6 +1,5 @@
 # MEAN-Stack
 Personal MEAN stack Website
-link-http://shashank-angular-mean.s3-website-us-west-1.amazonaws.com/
 
 This website is my portfolio website. I've used MEAN stack to develop it.
 Also, I used Angular's Google Material and BootStrap for Design
